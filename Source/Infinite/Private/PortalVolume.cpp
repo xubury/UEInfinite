@@ -27,7 +27,7 @@ void APortalVolume::OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor)
         FRotator myRot     = GetActorRotation();
         FRotator targetRot = character->GetActorRotation();
 
-        FRotator deltaRot = myRot - targetRot;
+        FRotator deltaRot = targetRot - (myRot + FRotator(0, 180, 0));
         deltaRot.Normalize();
         // float angle = delta.GetComponentForAxis(EAxis::Z);
         // GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Green, FString::SanitizeFloat(angle));
@@ -39,7 +39,7 @@ void APortalVolume::OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor)
         FVector newLoc = dstLoc + dstRot.RotateVector(FVector(bounds.SphereRadius, 0, 0));
         GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Green, "Teleport");
         character->SetActorLocation(newLoc);
-        character->GetController()->SetControlRotation(dstRot + deltaRot + FRotator(0, 180, 0));
+        character->GetController()->SetControlRotation(dstRot + deltaRot);
         // character->GetMovementComponent();
     }
 }
