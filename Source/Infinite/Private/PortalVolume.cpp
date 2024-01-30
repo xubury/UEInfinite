@@ -12,13 +12,11 @@ APortalVolume::APortalVolume()
 void APortalVolume::BeginPlay()
 {
     Super::BeginPlay();
-    // check(this != OtherPortal);
 }
 
 void APortalVolume::OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor)
 {
     GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Green, "OnTouchBegin");
-    // GEngine->AddOnScreenDebugMessage(-1, 1.5);
 
     AMainCharacter *character = Cast<AMainCharacter>(OtherActor);
     if (OtherPortal != nullptr && OtherPortal != this && character != nullptr) {
@@ -29,10 +27,6 @@ void APortalVolume::OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor)
 
         FRotator deltaRot = targetRot - (myRot + FRotator(0, 180, 0));
         deltaRot.Normalize();
-        // float angle = delta.GetComponentForAxis(EAxis::Z);
-        // GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Green, FString::SanitizeFloat(angle));
-        // if (abs(angle) >= 90) {
-        // }
         FVector  dstLoc = OtherPortal->GetActorLocation();
         FRotator dstRot = OtherPortal->GetActorRotation();
 
@@ -40,7 +34,6 @@ void APortalVolume::OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor)
         GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Green, "Teleport");
         character->SetActorLocation(newLoc);
         character->GetController()->SetControlRotation(dstRot + deltaRot);
-        // character->GetMovementComponent();
     }
 }
 

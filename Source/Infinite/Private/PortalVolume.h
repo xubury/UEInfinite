@@ -14,14 +14,14 @@ class APortalVolume : public ATriggerVolume {
     GENERATED_BODY()
   protected:
     virtual void BeginPlay() override;
-    
+
   public:
     APortalVolume();
 
     UFUNCTION()
-    void OnOverlapBegin(class AActor *OverlappedActor, class AActor *OtherActor);
+    void OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor);
     UFUNCTION()
-    void OnOverlapEnd(class AActor *OverlappedActor, class AActor *OtherActor);
+    void OnOverlapEnd(AActor *OverlappedActor, AActor *OtherActor);
     UPROPERTY(EditAnyWhere)
     APortalVolume *OtherPortal;
 };
