@@ -2,6 +2,7 @@
 
 #include "PortalVolume.h"
 #include "MainCharacter.h"
+#include "Log.h"
 
 APortalVolume::APortalVolume()
 {
@@ -16,7 +17,7 @@ void APortalVolume::BeginPlay()
 
 void APortalVolume::OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor)
 {
-    GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Green, "OnTouchBegin");
+    ScreenLog("OnTouchBegin");
 
     AMainCharacter *character = Cast<AMainCharacter>(OtherActor);
     if (OtherPortal != nullptr && OtherPortal != this && character != nullptr) {
@@ -31,7 +32,7 @@ void APortalVolume::OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor)
         FRotator dstRot = OtherPortal->GetActorRotation();
 
         FVector newLoc = dstLoc + dstRot.RotateVector(FVector(bounds.SphereRadius, 0, 0));
-        GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Green, "Teleport");
+        ScreenLog("Teleport");
         character->SetActorLocation(newLoc);
         character->GetController()->SetControlRotation(dstRot + deltaRot);
     }
@@ -39,5 +40,5 @@ void APortalVolume::OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor)
 
 void APortalVolume::OnOverlapEnd(AActor *OverlappedActor, AActor *OtherActor)
 {
-    GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Green, "OnTouchEnd");
+    ScreenLog("OnTouchEnd");
 }

@@ -34,6 +34,7 @@ public:
 
     UFUNCTION()
     void TurnHorizontal(float value);
+
     UFUNCTION()
     void TurnVertical(float value);
 };

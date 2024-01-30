@@ -20,8 +20,10 @@ class APortalVolume : public ATriggerVolume {
 
     UFUNCTION()
     void OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor);
+
     UFUNCTION()
     void OnOverlapEnd(AActor *OverlappedActor, AActor *OtherActor);
+
     UPROPERTY(EditAnyWhere)
     APortalVolume *OtherPortal;
 };
