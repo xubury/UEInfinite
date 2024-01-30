@@ -49,6 +49,7 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 {
     Super::SetupPlayerInputComponent(PlayerInputComponent);
     GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, TEXT("Setup player input"));
+    GEngine->AddOnScreenDebugMessage(-1, 5.0f, FColor::Blue, FString::Printf(TEXT("Here's my formatted string: %d"), 123));
     PlayerInputComponent->BindAxis("MoveRight", this, &AMainCharacter::MoveRight);
     PlayerInputComponent->BindAxis("MoveForward", this, &AMainCharacter::MoveForward);
     PlayerInputComponent->BindAxis("Turn", this, &AMainCharacter::TurnHorizontal);
