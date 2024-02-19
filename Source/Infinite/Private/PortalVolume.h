@@ -10,7 +10,8 @@
  *
  */
 UCLASS()
-class APortalVolume : public ATriggerVolume {
+class APortalVolume : public ATriggerVolume
+{
     GENERATED_BODY()
   protected:
     virtual void BeginPlay() override;

@@ -3,4 +3,4 @@
 #include "Infinite.h"
 #include "Modules/ModuleManager.h"
 
-IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, Infinite, "Infinite" );
+IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, Infinite, "Infinite");

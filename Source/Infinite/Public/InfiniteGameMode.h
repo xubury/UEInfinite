@@ -7,13 +7,13 @@
 #include "InfiniteGameMode.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class INFINITE_API AInfiniteGameMode : public AGameModeBase
 {
     GENERATED_BODY()
-    
- public:
+
+  public:
     AInfiniteGameMode();
 };

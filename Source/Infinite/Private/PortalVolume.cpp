@@ -20,7 +20,8 @@ void APortalVolume::OnOverlapBegin(AActor *OverlappedActor, AActor *OtherActor)
     ScreenLog("OnTouchBegin");
 
     AMainCharacter *character = Cast<AMainCharacter>(OtherActor);
-    if (OtherPortal != nullptr && OtherPortal != this && character != nullptr) {
+    if (OtherPortal != nullptr && OtherPortal != this && character != nullptr)
+    {
         FBoxSphereBounds bounds = GetBounds();
 
         FRotator myRot     = GetActorRotation();

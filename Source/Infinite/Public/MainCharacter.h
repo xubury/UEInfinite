@@ -11,20 +11,20 @@ class INFINITE_API AMainCharacter : public ACharacter
 {
     GENERATED_BODY()
 
-public:
+  public:
     // Sets default values for this character's properties
     AMainCharacter();
 
-protected:
+  protected:
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
 
-public:	
+  public:
     // Called every frame
     virtual void Tick(float DeltaTime) override;
 
     // Called to bind functionality to input
-    virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+    virtual void SetupPlayerInputComponent(class UInputComponent *PlayerInputComponent) override;
 
     UFUNCTION()
     void MoveRight(float value);
