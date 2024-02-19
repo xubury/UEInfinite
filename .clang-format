@@ -1,0 +1,28 @@
+# Run manually to reformat a file:
+# clang-format -i --style=file <file>
+Language: Cpp
+BasedOnStyle: LLVM
+IndentWidth: 4
+SortIncludes: false
+BreakBeforeBraces: Allman
+BreakBeforeBinaryOperators: All
+ColumnLimit: 120
+AllowShortFunctionsOnASingleLine: false
+AlignConsecutiveAssignments:
+    Enabled: true
+    AlignCompound: true
+
+AlignConsecutiveDeclarations:
+    Enabled: true
+
+AlignConsecutiveMacros:
+    Enabled: true
+    AcrossEmptyLines: false
+    AcrossComments: false
+
+AllowShortEnumsOnASingleLine: false
+AlignAfterOpenBracket: Align
+AlignEscapedNewlines: Left 
+AlignOperands: Align
+PointerAlignment: Right
+AlwaysBreakTemplateDeclarations: true
